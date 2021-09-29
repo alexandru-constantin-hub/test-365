@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Raleway:wght@100;200;300;400;500;600;700&display=swap);
+
+/* Variables pour les font...*/
+
+$body-font-familly: 'Raleway', sans-serif;
+$title-font-familly: 'Montserrat', sans-serif;
+$paragraph-font-size: 15px;
+$paragraph-line-height: 20px;
+$paragraph-weight: 400;
+$bold: 600;
+$title1-font-size: 28px;
+$title1-line-height: 32px;
+$title2-font-size: 24px;
+$title2-line-height: 28px;
+$title3-font-size: 20px;
+$title3-line-height: 24px;
+$menu-font-size: 15px;
+$menu-line-height: 20px;
+
+/* Variables pour les boutons...*/
+
+$button-font-size: 16px;
+$button-line-height: 18px;
+$button-padding: 20px;
+$button-radius: 5px;
+
+/* Variables pour transitions...*/
+$transition: all 0.5s ease;
+
+
+/* Mixin for fonts... */
+
+@mixin font($font-size, $line-height, $font-weight: $paragraph-weight, $font-family: $body-font-familly) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    font-family: $font-family;
+}
+
+
+/* Variables pour les couleurs...*/
+
+$background-color:#eee;
+$menu-bgcolor:#fff;
+$emphasis:#f00;
+$satan:666;
+
+$white-color:#fff;
+$grey-color:#666666;
+$black-color:#000;
+$primary-color: #47C671;
+
+/* Break points */
+
+$extrasmall: 576px;
+$small: 768px;
+$medium: 992px;
+$large: 1200px;
+
+
+/* Mixin for media query */
+
+@mixin respond ($breakpoint) {
+
+    @if $breakpoint==extrasmall {      
+
+    @media only screen and (max-width: $extrasmall) {
+      @content
+    }
+  }
+
+  @if $breakpoint==small {
+    @media only screen and (min-width: $extrasmall) and (max-width: $small) {
+      @content
+        }
+  }
+
+  @if $breakpoint==medium {
+    @media only screen and (min-width: $small) and (max-width: $medium) {
+        @content
+        }
+    }
+    
+    @if $breakpoint==large {
+        @media only screen and (min-width: $medium) and (max-width: $large) {
+            @content
+        }
+    }
+
+    @if $breakpoint==xlarge {
+        @media only screen and (min-width: $large) {
+            @content 
+        }
+    }
+}

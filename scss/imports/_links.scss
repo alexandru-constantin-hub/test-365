@@ -1,0 +1,51 @@
+@import '_settings';
+
+/* Nomenclature BEM .block__element--modifier ... ex: https://en.bem.info/methodology/naming-convention/*/
+
+/* Links*/
+
+.link-primary {
+    color: $primary-color;
+    font-weight: $bold;
+    text-decoration: none;
+    transition: $transition;
+    &:hover {
+        text-decoration: underline !important;
+    }
+    &:active {
+        text-decoration: underline !important;
+    }
+}
+
+/* Buttons */
+
+.button-primary {
+    @include font($button-font-size, $button-line-height, $bold);
+    padding: $button-padding;
+    border-radius: $button-radius;
+    background-color: $primary-color;
+    color: $white-color;
+    border: none;
+    transition: $transition;
+    &:hover{
+        background-color: $grey-color;
+    }
+}
+
+.slick-dots {
+    text-align: center;
+    li {
+        display: inline-block;
+        margin-left: 10px;
+        button {
+            @extend .button-primary;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+       
+    }
+    .slick-active button {
+        background-color: $grey-color;
+    }
+} 
+

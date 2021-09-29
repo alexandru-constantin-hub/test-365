@@ -1,0 +1,67 @@
+@import '_settings';
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+    font-family: $body-font-familly;
+    background: $background-color;
+    font-size: $paragraph-font-size;
+    line-height: $paragraph-line-height;
+    overflow-x: hidden;
+}
+
+.text-emphasis{
+  font-weight: 900;
+  color:$emphasis;
+}
+
+section{
+    padding:15px;
+    border-bottom:1px solid;
+}
+
+
+// Structure
+
+.mainContent{
+  padding: 100px 15px 0;
+}
+
+.site-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+    @include respond(extrasmall) {
+      max-width: $extrasmall;
+    }
+    @include respond(small) {
+      max-width: $small;
+    }
+    @include respond(medium) {
+      max-width: $medium;
+    }
+    @include respond(large) {
+      max-width: $large;
+    }
+    @include respond(xlarge) {
+      max-width: $large;
+    }
+}
+
+//  Tools
+.clearfix{
+  clear: both;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+

@@ -1,0 +1,173 @@
+@import '_settings';
+
+.header {
+    background-color: $menu-bgcolor;
+    
+    &-top {
+         padding: 30px 0;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+ 
+         &__logo{
+             padding-top: 18px;
+         }
+         
+         &__infos {
+             display: flex;
+             flex-direction: row;
+             justify-content: flex-end;
+             div:first-child {
+                 margin-right: 15px;
+                 align-self: flex-end;
+                 p {
+                     @include font($title3-font-size, $title3-font-size, $bold, $font-family: $title-font-familly);
+                     text-align: right;
+                     padding-bottom: 14px;
+                 }
+             }
+             div:nth-child(2) {
+                 align-self: flex-end;
+                 span {
+                     display: block;
+                     width: 150px;
+                     height: 28px;
+                     text-align: right;
+                     margin-left: auto;
+                 }
+            }
+            @include respond(extrasmall) {
+                display: none;
+            }
+            @include respond(small) {
+                display: none;
+            }
+          
+        }
+        &__mobile {
+            @include respond(medium) {
+                display: none;
+            }
+            @include respond(large) {
+                display: none;
+            }
+            @include respond(xlarge) {
+                display: none;
+            }
+        }
+    }
+    &__main-menu {
+        background-color: $grey-color;
+        a {
+            text-decoration: none;
+          }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li {
+                color: #fff;
+                display: block;
+                padding: 1rem;
+                position: relative;
+                text-decoration: none;
+                transition-duration: 0.2s;
+                &:first-child {
+                    padding-left: 0;
+                }
+                &:last-child {
+                  padding-right: 0;
+                  @include respond(large) {
+                    padding-left: 0;
+                }
+                @include respond(medium) {
+                    padding-right: 1rem;
+                }
+
+                }
+            }
+          
+          
+          }
+         
+
+            
+          li a {
+            color: $white-color;
+          }
+          
+          li a:hover,
+          li a:focus-within {
+            color: $primary-color;
+            cursor: pointer;
+          }
+          
+          li a:focus-within {
+            outline: none;
+            color: $primary-color;
+          }
+          
+          ul li ul {
+            background: $white-color;
+            visibility: hidden;
+            opacity: 0;
+            min-width: 13rem;
+            position: absolute;
+            transition: all 0.5s ease;
+            margin-top: 1rem;
+            left: -30px;
+            display: none;
+            z-index: 2;
+            
+            li {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+                &:hover {
+                    background-color: $primary-color;
+                    color: $white-color;
+                    a {
+                       color: $white-color;
+                    }
+                }
+            }
+           
+
+            a {
+                color: $black-color;
+            }
+          }
+          
+          ul li:hover > ul,
+          ul li:focus-within > ul,
+          ul li ul:hover,
+          ul li ul:focus {
+             visibility: visible;
+             opacity: 1;
+             display: block;
+          }
+          
+          ul li ul li {
+            clear: both;
+            width: 100%;
+          }
+
+        @include respond(extrasmall) {
+            display: none;
+        }
+
+        @include respond(small) {
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+

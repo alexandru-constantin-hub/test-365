@@ -1,0 +1,135 @@
+.header-mobile{
+    width: 100%;
+    background-color: $white-color;
+    position: fixed;
+    padding: 20px;
+    z-index: $satan;
+
+    &__burger{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        right: 10px;
+        display: block;
+        width: 40px;
+        height: 30px;
+
+        span{
+            display: block;
+            height: 5px;
+            border-radius: 2px;
+            width: 100%;
+            margin: 4px 0;
+            background-color: $primary-color;
+        }
+    }
+
+    &__close{
+        text-decoration: none;
+    }
+
+    &__close-x{
+        height: 40px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 37px;
+        right: 5px;
+        font-size: 100px;
+        color: $primary-color;
+    }
+
+    &__nav{
+        padding-top: 20px;
+        ul li {
+            list-style: none;
+            padding: 10px 0;
+            border-bottom: 2px solid $black-color;
+
+            a {
+                text-decoration: none;
+                color: $black-color;
+                
+            }
+
+            ul li {
+                border-bottom: none;
+                padding-left: 10px;
+                &:hover{
+                    background-color: $primary-color;
+                    a{
+                        color: $white-color;
+                    }
+                }
+            }
+
+            &.header-mobile__has-dropdown {
+                a {
+                    color: $primary-color;
+                }
+                
+            }
+        }
+    }
+
+    &__menu{
+        width: 100%;
+        position: fixed;
+        padding: 20px;
+        background-color: $white-color;
+        display: none;
+    }
+
+    &__infos{
+        &>a{
+            display: block;
+        }
+    }
+    &__has-dropdown{
+        display: block;
+        width: 100%;
+        position: relative;
+        .header-mobile__link{
+            &:after{
+                position: absolute;
+                content: '+';
+                display: block;
+                right: 0;
+                top: 11px;
+                font-size: 30px;
+                font-weight: bold;
+                color: $primary-color;
+            }
+            &--opened{
+                &:after{
+                    content: '-';
+                }
+            }
+        }
+
+        .dropdown{
+            display: none;
+            &--opened{
+                display: block;
+            }
+        }
+    }
+}
+
+.header-mobile__infos {
+    margin-top: 20px;
+    p {
+        @include font($title3-font-size, $title3-line-height, $bold)
+    }
+    .button-primary {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: $small) {
+    .header-mobile{
+        display: none;
+        &__menu{
+            display: none !important;
+        }
+    }
+}
