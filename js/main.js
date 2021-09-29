@@ -1,25 +1,38 @@
-$(function() {
-    // toggle du btn active
-    $('[data-filter-color]').click(function() {
-         var choosenColor = $(this).data('filter-color');
+// $(function() {
+//     // toggle du btn active
+//     $('[data-filter-color]').click(function() {
+//          var choosenColor = $(this).data('filter-color');
 
-        $('[data-filter-color]').each(function(e){
-            $(this).removeClass('active');
-        });
-        $(this).addClass('active');
+//         $('[data-filter-color]').each(function(e){
+//             $(this).removeClass('active');
+//         });
+//         $(this).addClass('active');
 
-        //toggle des sliders
-        $('[data-slider]').each(function(e){
-            if($(this).data('slider') = choosenColor){
-                $(this).addClass('active');
-                $(this).slick('setPosition');
-            }else{
-                $(this).removeClass('active');
-            }
-        });
-        return false;
-    });
-});
+//         //toggle des sliders
+//         $('[data-slider]').each(function(e){
+//             if($(this).data('slider') = choosenColor){
+//                 $(this).addClass('active');
+//                 $(this).slick('setPosition');
+//             }else{
+//                 $(this).removeClass('active');
+//             }
+//         });
+//         return false;
+//     });
+// });
+
+window.onscroll = function() {stychyHeader()};
+var navbar = document.getElementById("header-menu-sticky");
+var sticky = navbar.offsetTop;
+
+
+function stychyHeader() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
 
 $(document).ready(function(){
     // slider
@@ -72,11 +85,6 @@ $(document).ready(function(){
     $(".slick-dots li button").eq(1).text("Vert");
     $(".slick-dots li button").eq(2).text("Bleu");
 
-    // $( ".slick-dots li button" ).click(function(event) {
-    //     alert(event.target.id);
-    //     $targetButton = event.target.id;
-    //     $targetButton.css( 'background-color', '#666666' );
-    //   });
 
 
 });

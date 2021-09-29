@@ -247,6 +247,11 @@ p {
 .header__main-menu {
   background-color: #666666;
 }
+.header__main-menu.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .header__main-menu a {
   text-decoration: none;
 }
@@ -281,6 +286,7 @@ p {
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   .header__main-menu ul li:last-child {
     padding-right: 1rem;
+    padding-left: 0;
   }
 }
 .header__main-menu li a {

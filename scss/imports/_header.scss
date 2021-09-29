@@ -58,6 +58,11 @@
     }
     &__main-menu {
         background-color: $grey-color;
+        &.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
         a {
             text-decoration: none;
           }
@@ -86,6 +91,7 @@
                 }
                 @include respond(medium) {
                     padding-right: 1rem;
+                    padding-left: 0;
                 }
 
                 }
